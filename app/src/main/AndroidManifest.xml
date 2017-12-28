@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.lovejjfg.easyjump"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/NoActionBar.Full"
+            />
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTask"
+            />
+        <activity
+            android:name=".Test1Activity"
+            android:parentActivityName=".SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SplashActivity"
+                />
+
+        </activity>
+        <activity
+            android:name=".Test2Activity"
+            android:parentActivityName=".SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SplashActivity"
+                />
+        </activity>
+
+        <activity
+            android:name=".WebActivity"
+            android:parentActivityName=".SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SplashActivity"
+                />
+        </activity>
+
+        <activity
+            android:name=".IntentParseActivity"
+            android:parentActivityName=".SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SplashActivity"/>
+
+            <intent-filter>
+                <!--todo remember to change to yourself-->
+                <data android:scheme="test"/>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
+
+        <activity-alias
+            android:name=".LancherActivity"
+            android:label="@string/app_name"
+            android:targetActivity="SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+    </application>
+
+</manifest>

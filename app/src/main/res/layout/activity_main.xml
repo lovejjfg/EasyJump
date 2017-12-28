@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.lovejjfg.easyjump.MainActivity">
+
+    <Button
+        android:id="@+id/bt_t1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="通知跳转Test1"
+        android:layout_margin="10dp"
+        />
+
+    <Button
+        android:id="@+id/bt_t2"
+        android:text="通知跳转Test2"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        />
+
+    <Button
+        android:id="@+id/bt_web"
+        android:text="通知跳转Web"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        />
+
+
+    <Button
+        android:id="@+id/bt_t11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="跳转Test1"
+        android:layout_margin="10dp"
+        />
+
+    <Button
+        android:id="@+id/bt_t22"
+        android:text="跳转Test2"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        />
+
+    <Button
+        android:id="@+id/bt_web1"
+        android:text="跳转Web"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        />
+
+
+</LinearLayout>
