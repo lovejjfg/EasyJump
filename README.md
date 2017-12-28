@@ -1,5 +1,5 @@
 ### EasyJump
-实现外部浏览器
+实现外部浏览器或者通知跳转APP
 
 ### 跳转测试链接
 http://lovejjfg.github.io/test.html
