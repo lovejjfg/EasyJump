@@ -53,6 +53,12 @@ public class JumpUtils {
         context.startActivity(intent);
     }
 
+    public static void jumpDefaultWeb(Context context, String url) {
+        Uri uri = Uri.parse(url);
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        context.startActivity(intent);
+    }
+
     public static void jumpTest1(Context context) {
         Intent intent = new Intent(context, Test1Activity.class);
         intent.putExtra(Constants.TITLE, "首页点击跳转1！");

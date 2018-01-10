@@ -52,5 +52,8 @@ class MainActivity : AppCompatActivity() {
             JumpUtils.jumpWeb(this, "https://www.baidu.com")
 
         }
+        bt_show_web.setOnClickListener {
+            JumpUtils.jumpDefaultWeb(this, "http://lovejjfg.github.io/test.html")
+        }
     }
 }
