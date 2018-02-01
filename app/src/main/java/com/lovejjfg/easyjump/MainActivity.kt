@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
 
         }
         bt_web.setOnClickListener {
-            NotifyUtils.createNotify(this, "https://www.baidu.com", "首页网页跳转")
+            NotifyUtils.createNotify(this, "https://github.com/lovejjfg", "首页网页跳转")
         }
 
         bt_t11.setOnClickListener {
@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
 
         }
         bt_web1.setOnClickListener {
-            JumpUtils.jumpWeb(this, "https://www.baidu.com")
+            JumpUtils.jumpWeb(this, "https://github.com/lovejjfg")
 
         }
         bt_show_web.setOnClickListener {
