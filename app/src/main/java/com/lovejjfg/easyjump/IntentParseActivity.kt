@@ -18,9 +18,9 @@
 package com.lovejjfg.easyjump
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.TaskStackBuilder
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import com.lovejjfg.easyjump.utils.JumpUtils
 import com.lovejjfg.easyjump.utils.ViewUtils
@@ -43,8 +43,8 @@ class IntentParseActivity : AppCompatActivity() {
                     startActivity(resultIntent)
                 } else {
                     val stackBuilder = TaskStackBuilder.create(this)
-                            .addParentStack(resultIntent.component)
-                            .addNextIntent(resultIntent)
+                        .addParentStack(resultIntent.component)
+                        .addNextIntent(resultIntent)
                     stackBuilder.startActivities()
                 }
                 finish()
@@ -53,6 +53,5 @@ class IntentParseActivity : AppCompatActivity() {
             e.printStackTrace()
             finish()
         }
-
     }
 }

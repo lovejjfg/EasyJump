@@ -39,6 +39,7 @@ import java.util.Set;
  * Email: lovejjfg@gmail.com
  */
 
+@SuppressWarnings({ "WeakerAccess", "unused" })
 public class JumpUtils {
     private static final String TAG = JumpUtils.class.getSimpleName();
 
@@ -161,10 +162,9 @@ public class JumpUtils {
                 }
                 return intent;
         }
+        //todo 这里看具体的业务场景，也有可能应该直接返回 null
         intent = new Intent(context, SplashActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         return intent;
     }
-
-
 }

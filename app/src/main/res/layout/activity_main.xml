@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="打开浏览器"
+            android:text="@string/open_browser"
             />
 
 
@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="通知跳转Test1"
+            android:text="@string/notify_jump_test1"
             />
 
         <Button
@@ -38,7 +38,7 @@
 
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="通知跳转Test2"
+            android:text="@string/notify_jump_test2"
             />
 
         <Button
@@ -46,7 +46,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="通知跳转Web"
+            android:text="@string/notify_jump_web"
             />
 
 
@@ -55,7 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="跳转Test1"
+            android:text="@string/jump_test1"
             />
 
         <Button
@@ -64,7 +64,7 @@
 
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="跳转Test2"
+            android:text="@string/jump_test2"
             />
 
         <Button
@@ -72,7 +72,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="跳转Web"
+            android:text="@string/jump_web"
             />
 
 

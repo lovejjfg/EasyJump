@@ -22,12 +22,19 @@ import android.support.v7.app.AppCompatActivity
 import com.lovejjfg.easyjump.utils.Constants
 import com.lovejjfg.easyjump.utils.JumpUtils
 import com.lovejjfg.easyjump.utils.NotifyUtils
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.bt_show_web
+import kotlinx.android.synthetic.main.activity_main.bt_t1
+import kotlinx.android.synthetic.main.activity_main.bt_t11
+import kotlinx.android.synthetic.main.activity_main.bt_t2
+import kotlinx.android.synthetic.main.activity_main.bt_t22
+import kotlinx.android.synthetic.main.activity_main.bt_web
+import kotlinx.android.synthetic.main.activity_main.bt_web1
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        println("Main onCreate")
         setContentView(R.layout.activity_main)
         bt_t1.setOnClickListener {
             NotifyUtils.createNotify(this, Constants.KNOWN_SCHEME + "test1?title=首页测试1", "首页测试11")

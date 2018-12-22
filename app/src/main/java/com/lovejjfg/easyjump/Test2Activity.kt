@@ -26,6 +26,7 @@ class Test2Activity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        println("test2 onCreate")
         setContentView(R.layout.activity_content)
         val text = intent.getStringExtra(Constants.TITLE)
         title = text

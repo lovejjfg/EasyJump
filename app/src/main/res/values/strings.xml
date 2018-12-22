@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">EasyJump</string>
+    <string name="open_browser">打开浏览器</string>
+    <string name="notify_jump_test1">通知跳转Test1</string>
+    <string name="notify_jump_test2">通知跳转Test2</string>
+    <string name="notify_jump_web">通知跳转Web</string>
+    <string name="jump_test1">跳转Test1</string>
+    <string name="jump_test2">跳转Test2</string>
+    <string name="jump_web">跳转Web</string>
 </resources>

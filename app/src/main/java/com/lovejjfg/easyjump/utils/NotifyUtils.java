@@ -18,6 +18,7 @@
 package com.lovejjfg.easyjump.utils;
 
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.ComponentName;
@@ -26,7 +27,6 @@ import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
 import android.text.TextUtils;
-
 import com.lovejjfg.easyjump.MainActivity;
 import com.lovejjfg.easyjump.R;
 
@@ -52,30 +52,38 @@ public class NotifyUtils {
             stackBuilder.addNextIntent(resultIntent);
             // Gets a PendingIntent containing the entire back stack
             resultPendingIntent =
-                    stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
+                stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
         } else {
             // TODO: 2017/12/28 demo 测试时其实会一直走这里的
-            resultPendingIntent = PendingIntent.getActivity(context, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+            resultPendingIntent =
+                PendingIntent.getActivity(context, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         }
 
+        String channelId = "test" + System.currentTimeMillis();
         NotificationCompat.Builder mBuilder =
-                new NotificationCompat.Builder(context, "test" + System.currentTimeMillis())
-                        //这里没有背景透明的图片。
-                        .setSmallIcon(R.mipmap.ic_launcher_round)
-                        .setContentTitle(
-                                TextUtils.isEmpty(title) ? context.getResources().getString(R.string.app_name) : title)
-                        .setContentText("测测")
-                        .setDefaults(Notification.DEFAULT_VIBRATE)
-                        .setTicker("测测试试");
+            new NotificationCompat.Builder(context, channelId)
+                //这里没有背景透明的图片。
+                .setSmallIcon(R.mipmap.ic_launcher_foreground)
+                .setContentTitle(
+                    TextUtils.isEmpty(title) ? context.getResources().getString(R.string.app_name) : title)
+                .setContentText("测测")
+                .setDefaults(Notification.DEFAULT_VIBRATE)
+                .setTicker("测测试试");
 
         mBuilder.setContentIntent(resultPendingIntent);
         mBuilder.setAutoCancel(true);
 
         int mNotificationId = 1212 + COUNT++;
-        NotificationManager mNotifyMgr =
-                (NotificationManager) context
-                        .getSystemService(
-                                Context.NOTIFICATION_SERVICE);
-        mNotifyMgr.notify(mNotificationId, mBuilder.build());
+        NotificationManager manager =
+            (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        if (manager == null) {
+            return;
+        }
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            NotificationChannel notificationChannel =
+                new NotificationChannel(channelId, "name", NotificationManager.IMPORTANCE_HIGH);
+            manager.createNotificationChannel(notificationChannel);
+        }
+        manager.notify(mNotificationId, mBuilder.build());
     }
 }

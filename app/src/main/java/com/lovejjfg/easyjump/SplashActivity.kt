@@ -18,9 +18,10 @@
 package com.lovejjfg.easyjump
 
 import android.os.Bundle
+import android.support.v4.view.animation.FastOutSlowInInterpolator
 import android.support.v7.app.AppCompatActivity
 import com.lovejjfg.easyjump.utils.JumpUtils
-import kotlinx.android.synthetic.main.activity_splash.*
+import kotlinx.android.synthetic.main.activity_splash.logo
 
 class SplashActivity : AppCompatActivity() {
 
@@ -32,10 +33,28 @@ class SplashActivity : AppCompatActivity() {
             return
         }
         setContentView(R.layout.activity_splash)
+        logo.alpha = 0F
+        val d3 = (Math.random() * 10F).toInt()
+        if (d3 % 2 == 0) {
+            val d = (Math.random() * 10F).toInt()
+            logo.translationY = if (d % 2 == 0) 100F else -100F
+        } else {
+            val d1 = (Math.random() * 10F).toInt()
+            logo.translationX = if (d1 % 2 == 1) 100F else -100F
+        }
+        logo.scaleX = .6F
+        logo.scaleY = .6F
+        logo.animate()
+            .alpha(1F)
+            .translationY(0F)
+            .translationX(0F)
+            .scaleX(1F)
+            .scaleY(1F)
+            .setInterpolator(FastOutSlowInInterpolator())
+            .setDuration(300).startDelay = 300
         logo.postDelayed({
             JumpUtils.jumpHome(this)
             finish()
         }, 1000)
-
     }
 }
